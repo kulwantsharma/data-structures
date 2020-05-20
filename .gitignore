@@ -2,3 +2,7 @@
 out/production/data-structures/META-INF/
 out/production/data-structures/main/
 src/main/resources/
+.gitignore
+.idea
+data-structures.iml
+
