@@ -1,4 +1,4 @@
-package test.furloughPractice;
+package main.java;
 
 // Can a set be divided into two sets such that sums are equal. In this case, first add all the numbers of the set
 // and check if it is odd number, then set cannot be divided into two sets. If it is even then divide the sum be 2.

@@ -1,4 +1,4 @@
-package test.furloughPractice.ternary;
+package main.java.ternary;
 
 public class TernarySearchTreeTest {
     public static void main(String[] args) {

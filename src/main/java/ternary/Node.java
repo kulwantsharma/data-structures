@@ -1,4 +1,4 @@
-package test.furloughPractice.ternary;
+package main.java.ternary;
 
 public class Node {
     Node left;

@@ -1,4 +1,4 @@
-package test.furloughPractice.tries;
+package main.java.tries;
 
 public class TrieDataStructureTest {
     public static void main(String[] args) {

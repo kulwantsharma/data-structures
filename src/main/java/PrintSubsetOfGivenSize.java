@@ -1,4 +1,4 @@
-package test.furloughPractice;
+package main.java;
 
 public final class PrintSubsetOfGivenSize {
     public static void main(String[] args) {

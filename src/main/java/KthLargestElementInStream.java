@@ -1,4 +1,4 @@
-package test.furloughPractice;
+package main.java;
 
 public class KthLargestElementInStream {
 }

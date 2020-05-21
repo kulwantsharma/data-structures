@@ -1,4 +1,4 @@
-package test.furloughPractice;
+package main.java;
 
 //This solution uses DFA : Deterministic Finite Automata
 public final class DivisibilityInBinaryStream {

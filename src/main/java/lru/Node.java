@@ -1,4 +1,4 @@
-package test.furloughPractice.lru;
+package main.java.lru;
 
 import java.util.Objects;
 

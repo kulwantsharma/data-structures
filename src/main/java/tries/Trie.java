@@ -1,4 +1,4 @@
-package test.furloughPractice.tries;
+package main.java.tries;
 
 public class Trie {
 

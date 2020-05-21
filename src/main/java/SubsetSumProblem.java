@@ -1,4 +1,4 @@
-package test.furloughPractice;
+package main.java;
 
 // Does there exist a set with the given sum.
 public final class SubsetSumProblem {

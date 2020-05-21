@@ -1,4 +1,4 @@
-package test.furloughPractice.designpattern.adapter;
+package main.java.designpattern.adapter;
 
 public class Mp4Player implements AdvancedMediaPlayer {
     @Override

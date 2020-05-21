@@ -1,4 +1,4 @@
-package test.furloughPractice.designpattern.adapter;
+package main.java.designpattern.adapter;
 
 //Adapter Design pattern works as a bridge between two incompatible interfaces.
 /*

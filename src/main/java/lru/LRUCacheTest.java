@@ -1,4 +1,4 @@
-package test.furloughPractice.lru;
+package main.java.lru;
 
 public class LRUCacheTest {
     public static void main(String[] args) {
