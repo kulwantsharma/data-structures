@@ -6,3 +6,5 @@ src/main/resources/
 data-structures.iml
 
 src/main/java/designpattern/singleton/
+src/main/java/tree/
+target/classes/
