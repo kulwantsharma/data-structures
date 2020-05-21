@@ -4,7 +4,4 @@ src/main/resources/
 .gitignore
 .idea
 data-structures.iml
-
-src/main/java/designpattern/singleton/
-src/main/java/tree/
-target/classes/
+target/
