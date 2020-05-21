@@ -1,4 +1,4 @@
-package main.java;
+package main.java.array;
 
 public final class PrintSubsetOfGivenSize {
     public static void main(String[] args) {

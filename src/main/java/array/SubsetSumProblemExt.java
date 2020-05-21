@@ -1,19 +1,24 @@
-package main.java;
+package main.java.array;
 
-// Does there exist a set with the given sum.
-public final class SubsetSumProblem {
+// Can a set be divided into two sets such that sums are equal. In this case, first add all the numbers of the set
+// and check if it is odd number, then set cannot be divided into two sets. If it is even then divide the sum be 2.
+// nad now check if the newSum(sum/2) exists in the set.
+public class SubsetSumProblemExt {
 
     public static void main(String[] args) {
-
         int[] set = {3, 34, 4, 12, 5, 2};
-//        int[] set = {3, 4, 5, 2};
 
-        int sum = 30;
+        int sum = 0;
+        for (int i = 0; i < set.length; i++) {
+            sum += set[i];
+        }
 
-//        System.out.println(doesSumExistsRecursive(set, sum, 0));
-//        System.out.println(k);
-        System.out.println("\nDoes Sum Exists::" + doesSumExistsDynamicProgramming(set, sum));
-
+        System.out.println("Sum:" + sum);
+        if (sum % 2 != 0) {
+            System.out.println("The sets cannot be divided into two sets");
+        } else {
+            System.out.println("\nDoes Sum Exists::" + doesSumExistsDynamicProgramming(set, sum / 2));
+        }
     }
 
     private static boolean doesSumExistsDynamicProgramming(int[] set, int sum) {
@@ -54,13 +59,4 @@ public final class SubsetSumProblem {
         return subset[set.length][sum];
     }
 
-    private static boolean doesSumExistsRecursive(int[] set, int sum, int index) {
-        if (sum == 0) {
-            return true;
-        }
-        if (sum < 0 || index == set.length) {
-            return false;
-        }
-        return doesSumExistsRecursive(set, sum, index + 1) || doesSumExistsRecursive(set, sum - set[index], index + 1);
-    }
 }

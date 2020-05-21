@@ -1,4 +1,4 @@
-package main.java;
+package main.java.array;
 
 //This solution uses DFA : Deterministic Finite Automata
 public final class DivisibilityInBinaryStream {
