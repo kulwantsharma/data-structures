@@ -1,8 +1,8 @@
 # Created by .ignore support plugin (hsz.mobi)
-out/production/data-structures/META-INF/
-out/production/data-structures/main/
+out/
 src/main/resources/
 .gitignore
 .idea
 data-structures.iml
 
+src/main/java/designpattern/singleton/
