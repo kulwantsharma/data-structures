@@ -5,3 +5,5 @@ src/main/resources/
 .idea
 data-structures.iml
 target/
+src/main/java/Test1.java
+src/main/java/designpattern/singleton/
