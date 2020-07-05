@@ -1,92 +1,145 @@
-package main.java;
+// { Driver Code Starts
+//Initial Template for Java
 
-import java.util.Arrays;
-import java.util.HashSet;
+/*package whatever //do not write package name here */
 
-public class Test {
-    public static void main(String args[]) {
+import java.io.*;
+import java.util.*;
+import java.math.*;
 
-        String temp_dictionary[] = {"mobile", "samsung", "sam", "sung", "man", "mango",
-                "icecream", "and", "go", "i", "like", "ice", "cream"};
+class Node
+{
+    int data;
+    Node left, right;
 
-        HashSet<String> dictionary = new HashSet<>(Arrays.asList(temp_dictionary));
-        if (wordBreak(dictionary, "ilikesamsung")) {
-            System.out.println("Yes");
-        } else {
-            System.out.println("No");
-        }
-        if (wordBreak(dictionary, "iiiiiiii")) {
-            System.out.println("Yes");
-        } else {
-            System.out.println("No");
-        }
-        if (wordBreak(dictionary, "")) {
-            System.out.println("Yes");
-        } else {
-            System.out.println("No");
-        }
-        if (wordBreak(dictionary, "ilikelikeimangoiii")) {
-            System.out.println("Yes");
-        } else {
-            System.out.println("No");
-        }
-        if (wordBreak(dictionary, "samsungandmango")) {
-            System.out.println("Yes");
-        } else {
-            System.out.println("No");
-        }
-        if (wordBreak(dictionary, "samsungandmangok")) {
-            System.out.println("Yes");
-        } else {
-            System.out.println("No");
-        }
+    public Node(int d)
+    {
+        data = d;
+        left = right = null;
     }
-
-    private static boolean wordBreak(HashSet<String> dictionary, String str) {
-        int size = str.length();
-        if (size == 0) return true;
-
-        // Create the DP table to store results of subroblems. The value wb[i]
-        // will be true if str[0..i-1] can be segmented into dictionary words,
-        // otherwise false.
-        boolean wb[] = new boolean[size + 1];
-//        memset(wb, 0, sizeof(wb)); // Initialize all values as false.
-
-        for (int i = 1; i <= size; i++) {
-            // if wb[i] is false, then check if current prefix can make it true.
-            // Current prefix is "str.substr(0, i)"
-            if (wb[i] == false && dictionary.contains(str.substring(0, i)))
-                wb[i] = true;
-
-            // wb[i] is true, then check for all substrings starting from
-            // (i+1)th character and store their results.
-            if (wb[i] == true) {
-                // If we reached the last prefix
-                if (i == size)
-                    return true;
-
-                for (int j = i + 1; j <= size; j++) {
-                    // Update wb[j] if it is false and can be updated
-                    // Note the parameter passed to dictionaryContains() is
-                    // substring starting from index 'i' and length 'j-i'
-                    if (wb[j] == false && dictionary.contains(str.substring(i, j)))
-                        wb[j] = true;
-
-                    // If we reached the last character
-                    if (j == size && wb[j] == true)
-                        return true;
-                }
-            }
-        }
-
-    /* Uncomment these lines to print DP table "wb[]"
-     for (int i = 1; i <= size; i++)
-        cout << " " << wb[i]; */
-
-        // If we have tried all prefixes and none of them worked
-        return false;
-    }
-
-    // Driver program to test above functions
-
 }
+
+class GFG
+{
+    static Node buildTree(String str)
+    {
+        // Corner Case
+        if(str.length() == 0 || str.equals('N'))
+            return null;
+        String[] s = str.split(" ");
+
+        Node root = new Node(Integer.parseInt(s[0]));
+        Queue <Node> q = new LinkedList<Node>();
+        q.add(root);
+
+        // Starting from the second element
+        int i = 1;
+        while(!q.isEmpty() && i < s.length)
+        {
+            // Get and remove the front of the queue
+            Node currNode = q.remove();
+
+            // Get the current node's value from the string
+            String currVal = s[i];
+
+            // If the left child is not null
+            if(!currVal.equals("N"))
+            {
+
+                // Create the left child for the current node
+                currNode.left = new Node(Integer.parseInt(currVal));
+
+                // Push it to the queue
+                q.add(currNode.left);
+            }
+
+            // For the right child
+            i++;
+            if(i >= s.length)
+                break;
+            currVal = s[i];
+
+            // If the right child is not null
+            if(!currVal.equals("N"))
+            {
+
+                // Create the right child for the current node
+                currNode.right = new Node(Integer.parseInt(currVal));
+
+                // Push it to the queue
+                q.add(currNode.right);
+            }
+
+            i++;
+        }
+
+        return root;
+    }
+
+    public static void main(String args[]) throws IOException {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int t = Integer.parseInt(br.readLine().trim());
+        while(t>0)
+        {
+            String s = br.readLine();
+            Node root = buildTree(s);
+
+            int k = Integer.parseInt(br.readLine().trim());
+
+            Solution T = new Solution();
+            System.out.println(T.maxDiff(root,k));
+            t--;
+        }
+    }
+}// } Driver Code Ends
+
+
+//User function Template for Java
+
+class Solution
+{
+    static int closest = -1;
+    static int previous = -1;
+    // Return the minimum absolute difference between any tree node and the integer K
+    static int maxDiff(Node  root, int K)
+    {
+        closest = -1;
+        previous = -1;
+
+
+        findClosest(root,K);
+        if (closest == -1) {
+            closest = previous;
+        }
+
+        return closest;
+
+    }
+
+    private static void findClosest(Node root, int k) {
+        if (root == null) return;
+
+        findClosest(root.left, k);
+
+        if (root.data == k) {
+            closest = root.data;
+        } else if (root.data < k) {
+            previous = root.data;
+        } else {
+
+            if (previous == -1) {
+                closest = root.data;
+                previous = root.data;
+            } else if (closest == -1) {
+                int diff1 = Math.abs(previous - k);
+                int diff2 = Math.abs(root.data - k);
+
+                closest = diff2 <= diff1 ? root.data : previous;
+            }
+
+        }
+        findClosest(root.right, k);
+    }
+}
+
