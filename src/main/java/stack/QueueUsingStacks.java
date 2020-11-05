@@ -1,4 +1,4 @@
-package main.java.stack;
+package stack;
 
 import java.util.Stack;
 
@@ -25,7 +25,7 @@ public final class QueueUsingStacks {
     static class Queue {
 
         private Stack<Integer> stack1 = new Stack<>();
-        private Stack<Integer> stack2 = new Stack<>();
+        private Stack<Integer> stack2 = new Stack<Integer>();
 
         public void enqueue(int x) {
             stack1.push(x);

@@ -1,4 +1,4 @@
-package main.java.sorting;
+package sorting;
 
 public final class InsertionSort {
     public static void main(String[] args) {
@@ -28,7 +28,5 @@ public final class InsertionSort {
             }
 
         }
-
-
     }
 }

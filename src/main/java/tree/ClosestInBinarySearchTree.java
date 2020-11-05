@@ -1,4 +1,4 @@
-package main.java.tree;
+package tree;
 
 public class ClosestInBinarySearchTree {
     static int closest = -1;

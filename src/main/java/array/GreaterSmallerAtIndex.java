@@ -1,4 +1,4 @@
-package main.java.array;
+package array;
 
 //https://www.geeksforgeeks.org/find-the-element-before-which-all-the-elements-are-smaller-than-it-and-after-which-all-are-greater-than-it/
 public final class GreaterSmallerAtIndex {

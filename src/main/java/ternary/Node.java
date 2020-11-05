@@ -1,4 +1,4 @@
-package main.java.ternary;
+package ternary;
 
 public class Node {
     Node left;
