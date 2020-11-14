@@ -1,4 +1,4 @@
-package main.java.linkedlist;
+package linkedlist;
 
 public final class DeleteOccurrences {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package main.java.linkedlist;
+package linkedlist;
 
 public class MyList {
 

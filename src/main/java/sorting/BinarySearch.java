@@ -1,4 +1,4 @@
-package main.java.sorting;
+package sorting;
 
 public final class BinarySearch {
     public static void main(String[] args) {

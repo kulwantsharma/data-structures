@@ -1,4 +1,4 @@
-package main.java.linkedlist;
+package linkedlist;
 
 //https://www.geeksforgeeks.org/reverse-alternate-k-nodes-in-a-singly-linked-list/
 public final class ReverseAlternateKNodes {

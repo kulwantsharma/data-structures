@@ -1,4 +1,4 @@
-package main.java.backtracking;
+package backtracking;
 
 
 public class KnightTour {

@@ -1,4 +1,4 @@
-package main.java.linkedlist;
+package linkedlist;
 
 public final class ReverseLinkedList {
     public static void main(String[] args) {
