@@ -1,14 +1,12 @@
 package array;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Stack;
 
+//https://www.geeksforgeeks.org/next-greater-element/
 public class NextGreaterElement {
     public static void main(String[] args) {
 
         int arr[] = {10, 3, 12, 4, 2, 9, 13, 0, 8, 11, 1, 7, 5, 6};
-
         printNGE(arr);
     }
 
@@ -22,7 +20,7 @@ public class NextGreaterElement {
                 stack.push(arr[i]);
             } else {
                 while (!stack.isEmpty() && stack.peek() < arr[i]) {
-                     System.out.println("Element:" + stack.pop() + " NGE:" + arr[i]);
+                    System.out.println("Element:" + stack.pop() + " NGE:" + arr[i]);
 
                 }
                 stack.push(arr[i]);
